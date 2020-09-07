@@ -15,6 +15,14 @@ class TeamList extends React.Component {
     };
   }
 
+  componentDidMount() {
+    httpClient.get(urls.getTeamList()).then(response => {
+      if (isSuccessRequest(response.status)) {
+        this.setState({ teamData: response.data})
+      }
+    })
+  }
+
   splitBtnClickHandler() {
     const that = this;
     httpClient.post(urls.splitTraineeIntoTeam()).then(response => {
@@ -23,6 +31,7 @@ class TeamList extends React.Component {
       }
     });
   }
+
 
   render() {
     return (

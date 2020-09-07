@@ -1,5 +1,6 @@
 export const urls = {
   getTraineeList: () => `/trainee/list`,
+  addTrainee: () => `/trainee`,
   splitTraineeIntoTeam: () => `/team`,
-  addTrainee: () => `/trainee`
+  getTeamList: () => `/team/list`
 }
