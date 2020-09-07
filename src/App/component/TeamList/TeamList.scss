@@ -1,0 +1,25 @@
+@import "src/style/_variables";
+
+.team-list-head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-list-title{
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.split-team-button{
+  width: 120px;
+  height: 35px;
+
+  color: white;
+
+  border: none;
+  background: $primary-color;
+}
+
+.split-team-button:hover{
+  cursor: pointer;
+}
