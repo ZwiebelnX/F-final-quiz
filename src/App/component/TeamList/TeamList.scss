@@ -1,5 +1,11 @@
 @import "src/style/_variables";
 
+.non-data-placeholder{
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
 .team-list-head{
   display: flex;
   justify-content: space-between;

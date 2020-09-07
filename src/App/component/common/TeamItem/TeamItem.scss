@@ -11,8 +11,25 @@
   flex-wrap: wrap;
 }
 
-.team-name{
+.team-name-input{
+  border: none;
+  width: 100%;
   margin: 0;
+  padding: 0;
+  height: 30px;
+  background: #929bab;
+  color: white;
+
+  align-items: center;
+  text-align: center;
+}
+
+
+.team-name-button{
+  border: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   height: 30px;
   background: #929bab;
   color: white;

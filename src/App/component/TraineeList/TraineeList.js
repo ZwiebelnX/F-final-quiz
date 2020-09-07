@@ -34,7 +34,7 @@ class TraineeList extends React.Component {
         <h1>学员列表</h1>
         <div className='list-content'>
           {!!this.state.traineeList.length &&
-          this.state.traineeList.map((item) => <TraineeItem className='item' name={item.name} id={item.id} key={item.id} />
+          this.state.traineeList.map((item ) => <TraineeItem className='item' name={item.name} id={item.id} key={item.id} />
           )}
           {/* eslint-disable-next-line react/jsx-no-bind */}
         <AddTraineeItem refreshData={this.fetchData.bind(this)} />
