@@ -18,7 +18,7 @@ class TraineeList extends React.Component {
   }
 
   fetchData = () => {
-    httpClient.get(urls.getTraineeList()).then((response) => {
+    httpClient.get(urls.getTraineesUngroupedList()).then((response) => {
       if (isSuccessRequest(response.status)) {
         this.setState({ traineeList: response.data });
       }
