@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import './App.scss';
-import TraineeList from './component/TraineeList/TraineeList';
-import TeamList from './component/TeamList/TeamList';
+import 'antd/dist/antd.css'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import MainPage from './page/mainPage/mainPage';
+import CreateTrainee from './page/createTrainee/createTrainee';
 
 class App extends Component {
   render() {
     return (
       <div data-testid="app" className="App">
-        <TeamList />
-        <TraineeList />
+        <Router>
+          <Switch>
+            <Route path="/trainee/create" component={CreateTrainee} />
+            <Route component={MainPage} />
+          </Switch>
+        </Router>
       </div>
     );
   }

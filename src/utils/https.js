@@ -1,4 +1,5 @@
 import axios from "axios";
+import { notification } from 'antd';
 
 const httpClient = axios.create({
   baseURL: "http://localhost:8080",
@@ -7,14 +8,14 @@ const httpClient = axios.create({
 
 httpClient.interceptors.response.use(
   (response) => {
-    // eslint-disable-next-line no-console
-    console.log(response)
     return response;
   },
   (error) => {
-    // eslint-disable-next-line no-console
-    console.error(`response in error: ${error}`);
     const {response} = error
+    notification.error({
+      message: '网络请求失败！',
+      description: response.data.message
+    });
     return response;
   }
 );

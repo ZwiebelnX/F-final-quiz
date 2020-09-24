@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamItem from '../common/TeamItem/TeamItem';
 import httpClient, { isSuccessRequest } from '../../../utils/https';
-import { urls } from '../../../utils/urls';
+import urls from '../../../utils/urls';
 
 import './TeamList.scss';
 

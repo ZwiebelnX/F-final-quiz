@@ -1,7 +1,7 @@
 import React from 'react';
 import TraineeItem from '../common/TraineeItem/TraineeItem';
 import httpClient, { isSuccessRequest } from '../../../utils/https';
-import { urls } from '../../../utils/urls';
+import urls from '../../../utils/urls';
 import './TraineeList.scss'
 import AddTraineeItem from '../common/AddTraineeItem/AddTraineeItem';
 
