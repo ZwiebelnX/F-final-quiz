@@ -1,7 +1,8 @@
 export default {
   getTraineeList: () => `/trainees/ungroupedList`,
   addTrainee: () => `/trainees`,
+  deleteTrainee: (id) => `/trainees/${id}`,
   splitTraineeIntoTeam: () => `/team`,
   getTeamList: () => `/team/list`,
-  changeTeamName: (index) => `/team/${index}/name`
-}
+  changeTeamName: (index) => `/team/${index}/name`,
+};

@@ -2,15 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './TraineeItem.scss';
-import { Popover, List } from 'antd';
+import { Popover, List, Modal } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 import InfoItem from './component/InfoItem/InfoItem';
+import httpClient from '../../../../utils/https';
+import urls from '../../../../utils/urls';
 
+const { confirm } = Modal;
 class TraineeItem extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {};
   }
+
+  handleDelete = () => {
+    const that = this;
+    confirm({
+      title: '确认删除',
+      icon: <ExclamationCircleOutlined />,
+      content: `确定要删除${this.props.data.id}.${this.props.data.name}?`,
+      async onOk() {
+        await httpClient.delete(urls.deleteTrainee(that.props.data.id));
+        that.props.refreshFunc();
+      },
+      onCancel() {},
+    });
+  };
 
   render() {
     const popover = (
@@ -20,7 +38,8 @@ class TraineeItem extends React.Component {
       />
     );
     return (
-      <div className="content-container">
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
+      <div className="content-container" onClick={this.handleDelete}>
         <Popover content={popover}>
           <div className="content">
             {this.props.data.id}.{this.props.data.name}
@@ -40,6 +59,8 @@ TraineeItem.propTypes = {
     github: PropTypes.string,
     zoomId: PropTypes.string,
   }),
+  // eslint-disable-next-line react/no-unused-prop-types
+  refreshFunc: PropTypes.func,
 };
 
 export default TraineeItem;

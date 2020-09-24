@@ -17,13 +17,13 @@ class TraineeList extends React.Component {
     this.fetchData();
   }
 
-  fetchData() {
+  fetchData = () => {
     httpClient.get(urls.getTraineeList()).then((response) => {
       if (isSuccessRequest(response.status)) {
         this.setState({ traineeList: response.data });
       }
     });
-  }
+  };
 
   render() {
     return (
@@ -32,7 +32,12 @@ class TraineeList extends React.Component {
         <div className="list-content">
           {!!this.state.traineeList.length &&
             this.state.traineeList.map((item) => (
-              <TraineeItem className="item" data={item} key={item.id} />
+              <TraineeItem
+                className="item"
+                data={item}
+                key={item.id}
+                refreshFunc={this.fetchData}
+              />
             ))}
         </div>
       </div>
