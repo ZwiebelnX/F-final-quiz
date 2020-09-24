@@ -1,0 +1,12 @@
+@import '/src/style/_variables';
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2em;
+  background: $light-gray;
+  margin: 10px;
+  width: 100px;
+  height: 40px;
+}
