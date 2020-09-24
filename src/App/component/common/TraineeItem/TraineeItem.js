@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './TraineeItem.scss';
 import { Popover, List, Modal } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import InfoItem from './component/InfoItem/InfoItem';
+import InfoItem from '../InfoItem/InfoItem';
 import httpClient from '../../../../utils/https';
 import urls from '../../../../utils/urls';
 
@@ -20,6 +20,8 @@ class TraineeItem extends React.Component {
     const that = this;
     confirm({
       title: '确认删除',
+      okText: '确认',
+      cancelText: '取消',
       icon: <ExclamationCircleOutlined />,
       content: `确定要删除${this.props.data.id}.${this.props.data.name}?`,
       async onOk() {
