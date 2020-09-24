@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import './AddTraineeItem.scss';
 import httpClient from '../../../../utils/https';
-import { urls } from '../../../../utils/urls';
+import urls from '../../../../utils/urls';
 
 class AddTraineeItem extends React.Component {
   constructor(props) {

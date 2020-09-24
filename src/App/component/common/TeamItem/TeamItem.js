@@ -4,7 +4,7 @@ import TraineeItem from '../TraineeItem/TraineeItem';
 
 import './TeamItem.scss';
 import httpClient from '../../../../utils/https';
-import { urls } from '../../../../utils/urls';
+import urls from '../../../../utils/urls';
 
 class TeamItem extends React.Component {
   constructor(props) {
