@@ -38,10 +38,13 @@ class TeamList extends React.Component {
 
 
   render() {
+
+    // TODO feedback：可以使用JSX语法，把判断放在return里
     let teamDisplay;
     if (this.state.teamData.length === 0) {
       teamDisplay = <div className='non-data-placeholder'>暂无记录</div>;
     } else {
+      // TODO feedback：refreshData 可以使用arrow function
       // eslint-disable-next-line react/jsx-no-bind
       teamDisplay = this.state.teamData.map((item, index) => <TeamItem refreshData={this.fetchData.bind(this)} name={item.name}
                                                          index={index} traineeList={item.traineeList}

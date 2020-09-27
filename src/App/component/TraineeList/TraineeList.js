@@ -30,6 +30,7 @@ class TraineeList extends React.Component {
       <div>
         <h1>学员列表</h1>
         <div className="list-content">
+          {/* TODO feedback:可以解构state，可读性会更高些 */}
           {!!this.state.traineeList.length &&
             this.state.traineeList.map((item) => (
               <TraineeItem

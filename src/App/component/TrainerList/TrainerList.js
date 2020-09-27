@@ -26,9 +26,11 @@ class TrainerList extends React.Component {
 
   render() {
     return (
+      // TODO feedback：div嵌套多了一层，且可以使用section标签
       <div>
         <div>
           <h1>讲师列表</h1>
+          {/* TODO feedback：列表用ul li更符合语义 */}
           <div className="list-content">
             {!!this.state.trainerList.length &&
               this.state.trainerList.map((item) => (

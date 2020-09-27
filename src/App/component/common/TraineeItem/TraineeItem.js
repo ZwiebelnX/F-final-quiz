@@ -8,6 +8,7 @@ import InfoItem from '../InfoItem/InfoItem';
 import httpClient from '../../../../utils/https';
 import urls from '../../../../utils/urls';
 
+// TODO feedback：TraineeItem和TrainerItem两个组件有很多重复逻辑，可以抽象、提取成公共组件
 const { confirm } = Modal;
 class TraineeItem extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class TraineeItem extends React.Component {
   }
 
   handleDelete = () => {
+    // TODO feedback: onOk可以使用arrow function来解决this binding的问题
     const that = this;
     confirm({
       title: '确认删除',
